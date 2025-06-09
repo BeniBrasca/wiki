@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wiki Minecraft - Guías y Tutoriales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0; background: #f0f0f0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      min-height: 80vh;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+    }
+    .search-box {
+      margin: 1rem 0;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+    }
+    button {
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wiki Minecraft</h1>
+    <p>Guías, tutoriales y trucos para Minecraft</p>
+  </header>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#recetas">Recetas</a>
+    <a href="#construcciones">Construcciones</a>
+    <a href="#redstone">Redstone</a>
+    <a href="#mods">Mods</a>
+  </nav>
+
+  <main>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar en la wiki..." />
+      <button onclick="search()">Buscar</button>
+    </div>
+
+    <section id="inicio">
+      <h2>Bienvenido a la Wiki Minecraft</h2>
+      <p>Esta wiki está diseñada para ayudarte a explorar y dominar Minecraft. Encontrarás guías para principiantes, recetas de crafteo, trucos con redstone, ideas para construcciones y mucho más.</p>
+    </section>
+
+    <section id="recetas">
+      <h2>Recetas de Crafteo</h2>
+      <ul>
+        <li><strong>Antorcha:</strong> 1 palo + 1 carbón o carbón vegetal</li>
+        <li><strong>Espada de hierro:</strong> 2 lingotes de hierro + 1 palo</li>
+        <li><strong>Horno:</strong> 8 bloques de piedra (cobblestone) en forma cuadrada</li>
+      </ul>
+    </section>
+
+    <section id="construcciones">
+      <h2>Ideas de Construcciones</h2>
+      <ul>
+        <li>Casa básica con materiales fáciles</li>
+        <li>Granjas automáticas</li>
+        <li>Castillos medievales</li>
+      </ul>
+    </section>
+
+    <section id="redstone">
+      <h2>Guías de Redstone</h2>
+      <ul>
+        <li>Cómo hacer una puerta automática</li>
+        <li>Trampas con redstone</li>
+        <li>Sistemas de iluminación controlados</li>
+      </ul>
+    </section>
+
+    <section id="mods">
+      <h2>Mods Recomendados</h2>
+      <ul>
+        <li>Optifine (mejora gráficos)</li>
+        <li>Biomes O' Plenty (nuevos biomas)</li>
+        <li>JourneyMap (mapa en tiempo real)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Wiki Minecraft - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function search() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const sections = document.querySelectorAll('main section');
+      let found = false;
+
+      sections.forEach(section => {
+        if(section.textContent.toLowerCase().includes(input)) {
+          section.scrollIntoView({behavior: 'smooth'});
+          found = true;
+        }
+      });
+
+      if(!found) {
+        alert('No se encontró el término buscado.');
+      }
+    }
+  </script>
+</body>
+</html>
